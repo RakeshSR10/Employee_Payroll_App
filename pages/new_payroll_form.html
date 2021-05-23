@@ -49,6 +49,37 @@
 						</label>
 					</div>
 				</div>
+				<!-- UC4 Employee Radio Button,Checkbox and Range Indicator -->
+				<div class="row-content">
+					<label class="label text" for="gender">Gender</label>
+					<div>
+						<input type="radio" id="male" name="gender" value="male">
+						<label class="text" for="male">Male</label>
+						<input type="radio" id="female" name="gender" value="female">
+						<label class="text" for="male">Female</label>
+					</div>
+				</div>
+				<div class="row-content">
+					<label class="label text" for="department">Department</label>
+					<div>
+						<input class="checkbox" type="checkbox" name="hr" id="hr" value="HR">
+						<label class="text" for="hr">HR</label>
+						<input class="checkbox" type="checkbox" name="sales" id="sales" value="SALES">
+						<label class="text" for="hr">Sales</label>
+						<input class="checkbox" type="checkbox" name="marketing" id="marketing" value="MARKETING">
+						<label class="text" for="hr">Marketing</label>
+						<input class="checkbox" type="checkbox" name="engineer" id="engineer" value="ENGINEER">
+						<label class="text" for="hr">Engineer</label>
+						<input class="checkbox" type="checkbox" name="others" id="others" value="OTHERS">
+						<label class="text" for="hr">Others</label>
+					</div>
+				</div>
+				<div class="row-content">
+					<label class="label text" for="salary">Choose Your Salary</label>
+					<input class="input" type="range" name="salary" id="salary" min="300000"
+					       max="500000" step="100" value="400000">
+					<output class="salary-output text" for="salary">400000</output>	   
+				</div>
 			</form>
 		</div> 
   </body>
