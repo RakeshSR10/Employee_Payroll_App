@@ -1,14 +1,26 @@
+//UC 11
+let empPayrollList;//global variable
 window.addEventListener('DOMContentLoaded', (event) => {
+    empPayrollList = getEmployeePayrollDataFromStorage();
+    document.querySelector(".emp-count").textContent = empPayrollList.length;
     createInnerHtml();
 });
+
+const getEmployeePayrollDataFromStorage = () => {
+    return localStorage.getItem('EmployeePayrollList') ?
+                        JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
+}
+
 //UC 9 - View Employee Payroll Details in a Tabular Format from JS File
 createInnerHtml = () => {
+    if (empPayrollList.length == 0) return;
+
     const headerHtml =  "<th></th><th>Name</th><th>Gender</th><th>Department</th>"+
                        "<th>Salary</th><th>Start Date</th><th>Actions</th>";
-    //set innerHtml                   
+    //UC 10 set innerHtml                   
     let innerHtml = `${headerHtml}`;
-    let employeePayrollList = createEmployeePayrollJSON();
-    //for loop for printing multiple employee
+    //let employeePayrollList = createEmployeePayrollJSON();
+    //UC 10 -for loop for printing multiple employee
     for(const empPayrollData of employeePayrollList) {
         innerHtml = `${innerHtml}
         <tr>
@@ -18,16 +30,17 @@ createInnerHtml = () => {
                 <td>${getDeptHtml(empPayrollData._department)}</td>
                 <td>${empPayrollData._salary}</td>
                 <td>${empPayrollData._startDate}</td>
-                <td><img id="1" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
-                <img id="1" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
-            </td>    
+                <td>
+                    <img name="${empPayrollData._id}" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
+                    <img name="${empPayrollData._id}" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
+                </td>    
         </tr> `;
     }
     document.querySelector('#table-display').innerHTML = innerHtml;
 }
 
-//JSON objects
-const createEmployeePayrollJSON = () => {
+//UC 10-JSON objects
+/*const createEmployeePayrollJSON = () => {
     let empPayrollListLocal = [
         {
             _name: 'Rakesh',
@@ -55,9 +68,9 @@ const createEmployeePayrollJSON = () => {
         }
     ];
     return empPayrollListLocal;
-}
+}*/
 
-//To print Multiple Department without showing 'undefined'.
+//UC 10 -To print Multiple Department without showing 'undefined'.
 const getDeptHtml = (deptList) => {
     let deptHtml = '';
     for (const dept of deptList) {
