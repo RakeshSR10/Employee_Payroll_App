@@ -138,13 +138,21 @@ select {
 }
 .submitButton {
     border: navy;
+    font-size: 20px;
     background-color: #f5f5f5;
     margin-right: 30px;
+    color: white;
+    background-color: green;
+    border-radius: 10px;
 }
 .cancelButton {
-    margin-left: 140px;
+    margin-left: 10px;
+    font-size: 20px;
     text-decoration: none;
     text-align: center;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
 }
 
 /* UC 2 */
