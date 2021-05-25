@@ -4,9 +4,10 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap">
 		<link rel="stylesheet" href="../css/new_payroll_form.css">
 		<title>Employee-Payroll-Form</title>
-		<script defer src="../js/EmployeePayrollData.js"></script>
+		<script defer src="../js/EmployeePayroll.js"></script>
 		<script defer src="../js/new_payroll_form.js"></script>      
   </head>
   <body>
@@ -144,13 +145,14 @@
 				<!-- UC6 Ability to add Notes and Button -->
 				<div class="row-content">
 					<label class="label text" for="notes">Notes</label>
-					<textarea name="Notes" id="notes" placeholder="type here..." style="height: 100px;"></textarea>
+					<textarea id="notes" class="input" name="Notes" placeholder="type here..." style="height: 100px;"></textarea>
 				</div>
 				<div class="button-content">
 					<a href="./home.html" class="resetButton button cancelButton">Cancel</a>
 					<div class="submit-reset">
 						<button type="submit" class="button submitButton" id="submitButton">Submit</button>
-						<button type="reset" class="resetButton button">Reset</button>
+						<button type="reset" class="resetButton button" style="color: black; background-color:
+								 yellow; font-size: 20px; border-radius: 10px;">Reset</button>
 					</div>
 				</div>
 			</form>

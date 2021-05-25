@@ -5,7 +5,7 @@ class EmployeePayrollData {
 
     get name() { return this._name; }
     set name(name) {
-        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        let nameRegex = RegExp('^[A-Z]{1}[a-z\\s]{2,}$');
         if (nameRegex.test(name))
             this._name = name;
         else throw "Name is Incorrect";    
@@ -17,8 +17,8 @@ class EmployeePayrollData {
     get gender() { return this._gender; }
     set gender(gender) { this._gender = gender; }
 
-    get department() { return this._depaetment; }
-    set department(department) { this._depaetment = department; }
+    get department() { return this._department; }
+    set department(department) { this._department = department; }
 
     get salary() { return this._salary; }
     set salary(salary) { this._salary = salary; }
@@ -34,7 +34,9 @@ class EmployeePayrollData {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this.startDate ? "undefined" :
                         this.startDate.toLocalDateString("en-US", options);
-        return "id="+ this.id +", name="+ this.name +", gender="+ this.gender +", profilePic="+ this.profilePic +
-                ", department="+ this.department +", salary="+ this.salary +", startDate="+ empDate +", notes="+ this.note;                 
+        return "id="+ this.id +", name="+ this.name +", gender="+ this.gender +
+                ", profilePic="+ this.profilePic +
+                ", department="+ this.department +", salary="+ this.salary +
+                ", startDate="+ empDate +", notes="+ this.note;                 
     }
 }
