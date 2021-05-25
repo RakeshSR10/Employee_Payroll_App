@@ -1,6 +1,5 @@
 class EmployeePayrollData {
-    //UC 1 - setting Attributes.
-    //getter and setter method
+    //UC 1 - setting Attributes with getter and setter method
     get id() { return this._id; }
     set id(id) { this._id = id; }
 
