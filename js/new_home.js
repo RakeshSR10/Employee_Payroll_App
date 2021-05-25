@@ -18,8 +18,8 @@ createInnerHtml = () => {
                 <td>${getDeptHtml(empPayrollData._department)}</td>
                 <td>${empPayrollData._salary}</td>
                 <td>${empPayrollData._startDate}</td>
-                <td><img id="1" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
-                <img id="1" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
+                <td><img id="${empPayrollData._id}" onclick="remove(this)" src="../assets/icons/delete-black-18dp.svg" alt="delete">
+                <img id="${empPayrollData._id}" onclick="update(this)" src="../assets/icons/create-black-18dp.svg" alt="edit">
             </td>    
         </tr> `;
     }
