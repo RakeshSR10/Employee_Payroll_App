@@ -1,5 +1,5 @@
 //UC 2 - Set Event Listener to DOM when is Loaded
-window.addEventListener('DOMContentLoad', (event) => {
+window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const textError = document.querySelector('.text-error');
     name.addEventListener('input', function() {
@@ -61,6 +61,7 @@ const createEmployeePayroll = () => {
     let date = getInputValueById('#day')+" "+getInputValueById('#month')+" "+
                getInputValueById('#year');
     employeePayrollData.date = Date.parse(date);
+    console.log("Printed data = "+employeePayrollData.toString());
     alert(employeePayrollData.toString());
     return employeePayrollData;
 }
