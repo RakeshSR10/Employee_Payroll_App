@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,500&display=swap">
 		<link rel="stylesheet" href="../css/new_payroll_form.css">
@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</header> 
-		<div class="form-content">
+		<div id="formId" class="form-content">
 			<form class="form" action="#" onreset="resetForm()" onsubmit="save()">
 				<!-- UC2 Employee Form -->
 				<div class="form-head">Employee Payroll Form</div>
@@ -40,15 +40,15 @@
 						</label>
 						<label>
 							<input type="radio" id="profile2" name="profile" value="../assets/profile-images/Ellipse -1.png" required>
-							<img class="profile" id="image1" src="../assets/profile-images/Ellipse -1.png" alt="profile">
+							<img class="profile" id="image2" src="../assets/profile-images/Ellipse -1.png" alt="profile">
 						</label>
 						<label>
 							<input type="radio" id="profile3" name="profile" value="../assets/profile-images/Ellipse -8.png" required>
-							<img class="profile" id="image1" src="../assets/profile-images/Ellipse -8.png" alt="profile">
+							<img class="profile" id="image3" src="../assets/profile-images/Ellipse -8.png" alt="profile">
 						</label>
 						<label>
 							<input type="radio" id="profile4" name="profile" value="../assets/profile-images/Ellipse -7.png" required>
-							<img class="profile" id="image1" src="../assets/profile-images/Ellipse -7.png" alt="profile">
+							<img class="profile" id="image4" src="../assets/profile-images/Ellipse -7.png" alt="profile">
 						</label>
 					</div>
 				</div>
@@ -60,6 +60,7 @@
 						<label class="text" for="male">Male</label>
 						<input type="radio" id="female" name="gender" value="female">
 						<label class="text" for="male">Female</label>
+						<error-output class="text-error" for="text"></error-output>
 					</div>
 				</div>
 				<div class="row-content">
@@ -67,25 +68,26 @@
 					<div>
 						<input class="checkbox" type="checkbox" name="hr" id="hr" value="HR">
 						<label class="text" for="hr">HR</label>
-						<input class="checkbox" type="checkbox" name="sales" id="sales" value="SALES">
+						<input class="checkbox" type="checkbox" name="sales" id="sales" value="Sales">
 						<label class="text" for="hr">Sales</label>
-						<input class="checkbox" type="checkbox" name="marketing" id="marketing" value="MARKETING">
+						<input class="checkbox" type="checkbox" name="marketing" id="marketing" value="Marketing">
 						<label class="text" for="hr">Marketing</label>
-						<input class="checkbox" type="checkbox" name="engineer" id="engineer" value="ENGINEER">
+						<input class="checkbox" type="checkbox" name="engineer" id="engineer" value="Engineer">
 						<label class="text" for="hr">Engineer</label>
-						<input class="checkbox" type="checkbox" name="others" id="others" value="OTHERS">
+						<input class="checkbox" type="checkbox" name="others" id="others" value="Others">
 						<label class="text" for="hr">Others</label>
+						
 					</div>
 				</div>
 				<div class="row-content">
-					<label class="label text" for="salary">Choose Your Salary</label>
+					<label class="label text" for="salary">Choose Your Salary: </label>
 					<input class="input" type="range" name="salary" id="salary" min="300000"
 					       max="500000" step="100" value="400000">
-					<output class="salary-output text" for="salary">400000</output>	   
+					<output class="salary-output text" for="salary">400000</output> 
 				</div>
 				<!-- UC5 Employee Start Date -->
 				<div class="row-content">
-					<label class="label text" for="startDate">Start Date</label>
+					<label class="label text" for="startDate">Start Date:</label>
 					<div>
 						<select name="Day" id="day">
 							<option value="1">1</option>
@@ -119,6 +121,7 @@
 							<option value="29">29</option>
 							<option value="30">30</option>
 							<option value="31">31</option>
+							<error-output class="text-error" for="text"></error-output>
 						</select>
 						<select name="Month" id="month">
 							<option value="Jan">January</option>
@@ -133,13 +136,16 @@
 							<option value="Oct">October</option>
 							<option value="Nov">November</option>
 							<option value="Dec">December</option>
+							<error-output class="text-error" for="text"></error-output>
 						</select>
 						<select name="Year" id="year">
 							<option value="2020">2020</option>
 							<option value="2019">2019</option>
 							<option value="2018">2018</option>
 							<option value="2017">2017</option>
+							<error-output class="text-error" for="text"></error-output>
 						</select>
+						<span class="validity"></span>
 					</div>
 				</div>
 				<!-- UC6 Ability to add Notes and Button -->
